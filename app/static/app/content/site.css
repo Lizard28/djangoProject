@@ -1,0 +1,113 @@
+body {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    background-color: rgb(33, 33, 95);
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    margin: 10px;
+    text-align: justify
+}
+
+ul li{
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+b, h3, h2, .answer, h5{
+    color: rgb(21, 199, 199);
+}
+
+#im12 {
+    width: 600px;
+    margin-left: 10px;
+}
+
+#im3 {
+    width:200px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+a{
+    color:rgb(77, 255, 77);
+    font-size: 20px;
+}
+
+h1, h4, h7, address, .header {
+    color: white;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+}
+
+.links{
+    width:100px;
+    height: 50px;
+    margin-left: 10px;
+    margin: 10px;
+}
+
+label{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify
+}
+
+div.resourceItem > a, div.resourceItem > p
+{
+    display: inline-block;
+}
+
+.id_username, .id_password1, .id_password2 {
+    color: aqua;
+}
+
+.leftimg {
+    float:left; /* Выравнивание по левому краю */
+    margin: 12px 12px 12px 5px; /* Отступы вокруг картинки */
+    }

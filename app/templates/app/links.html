@@ -1,0 +1,32 @@
+{% extends "app/layout.html" %}
+
+
+{% block content %}
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+{% load static %}
+
+<div class="resourceItem">
+    <a href ="https://www.heavens-above.com/main.aspx" target="_blank" > 
+        <img class ="links" src="{% static 'D:\develop\djangoProject\app\static\app\content\res1.jpg' %}" alt="Logo 1"/> 
+    </a>
+    <p>Интерактивная карта ночного неба</p>
+</div>
+<br />
+
+<div class="resourceItem">
+    <a href ="https://www.roscosmos.ru" target="_blank"> 
+        <img class ="links" src="{% static 'D:\develop\djangoProject\app\static\app\content\res2.png' %}" alt="Logo 2"/>
+    </a>
+    <p>Государственная корпорация по космической деятельности в РФ</p>
+</div>
+<br />
+
+<div class="resourceItem">
+    <a href ="https://www.nasa.gov/image-of-the-day"  target="_blank"> 
+        <img class ="links" src="{% static 'D:\develop\djangoProject\app\static\app\content\res3.jpg' %}" alt="Logo 3"/>
+    </a>
+    <p>Галерея снимков, сделанных во время научных миссий NASA </p>
+</div>
+
+{% endblock %}

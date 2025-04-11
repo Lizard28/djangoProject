@@ -1,0 +1,25 @@
+{
+    "python.terminal.activateEnvironment": true,
+    
+    "explorer.compactFolders": false,
+    "workbench.list.openMode": "doubleClick",
+
+    "editor.stickyScroll.enabled": false,
+    "notebook.stickyScroll.enabled": false,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "workbench.tree.enableStickyScroll": false,
+
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "always",
+    "python.analysis.autoImportCompletions": true,
+
+    // "files.associations":
+    // {
+    //     "**/*.html": "django-html"
+    // }
+
+    // "emmet.includeLanguages": {
+    //     "django-html": "html,javascript",
+    //     // "jinja-html": "html"
+    // },
+}

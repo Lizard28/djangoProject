@@ -1,0 +1,108 @@
+{% extends "app/layout.html" %}
+{% block content %}
+{% load static %}
+<script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+<script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+{% if form != None %}
+<br><h2>Отправьте пожалуйста заполненную форму</h2><br>
+<div>
+    <form method="post">
+    {% csrf_token %}
+    <label for="{{ form.name.id_for_label }}">{{ form.name.label }} :</label>
+    {{ form.name }}<br><br>
+    <label for="{{ form.gender.id_for_label }}">{{ form.gender.label }} :</label>
+    {{ form.gender }}<br><br>
+    <label for="{{ form.like.id_for_label }}">{{ form.like.label }} :</label><br>
+    {{ form.like }}<br><br>
+    <label for="{{ form.dislike.id_for_label }}">{{ form.dislike.label }} :</label><br>
+    {{ form.dislike }}<br><br>
+    <label for="{{ form.internet.id_for_label }}">{{ form.internet.label }} :</label><br>
+    {{ form.internet }}<br><br>
+    <label for="{{ form.notice.id_for_label }}">{{ form.notice.label }} :</label>
+    {{ form.notice }}<br><br>
+    <label for="{{ form.email.id_for_label }}">{{ form.email.label }} :</label>
+    {{ form.email }}<br><br>
+    <label for="{{ form.message.id_for_label }}">{{ form.message.label }} :</label><br>
+    {{ form.message }}<br><br>
+    <input id="id_send" type="submit" value="Отправить">
+    </form>
+    <script>
+        const hover_event = true;
+        const focus_event = false;
+
+        function applyStyle(element_id, event_type) {
+            let elem = document.getElementById(element_id);
+
+            if(elem == null)
+            {
+                return;
+            }
+
+            // hover
+            if(event_type == hover_event)
+            {
+                elem.onmouseenter = function(e)
+                {
+                    e.target.style = "color: green;";
+                };
+                elem.onmouseleave = function(e)
+                {
+                    e.target.style = "";
+                };
+            }
+            // focus
+            else
+            if(event_type == focus_event)
+            {
+                elem.onfocus = function(e)
+                {
+                    e.target.style = "background-color: lightblue;";
+                };
+                elem.onblur = function(e)
+                {
+                    e.target.style = "";
+                };
+            }
+        }
+
+        {% for field in form.visible_fields %}
+            applyStyle("{{ field.id_for_label }}", focus_event);
+        {% endfor %}
+
+        applyStyle("id_send", hover_event);
+    </script> 
+
+{% comment %} <scipt>
+$(document).ready(function(){
+    $('#button').mouseover(function(){
+        $(this).css('color', 'red !important');
+    }).mouseout(function() {
+        $(this).css('color', 'black !important');
+    });
+
+    $('form').on('focus', 'input, textarea', function(){
+        $(this).css('background-color', 'lightblue');
+    }).on('blur', 'input,textarea', function(){
+        $(this).css('background-color', 'white');
+    });
+});
+</script> {% endcomment %}
+
+</div>
+{% else %}
+<br><h2>Благодарим за предоставленную информацию!</h2>
+<h3>Вы сообщили о себе следующее :</h3>
+<ul>
+    <li><span>Имя :</span> <span class="answer">{{ data.name }}</span></li>
+    <li><span>Пол :</span> <span class="answer">{{data.gender }}</span></li>
+    <li><span>Что понравилось на сайте:</span> <span class="answer">{{ data.like }}</span></li>
+    <li><span>Что не понравилось на сайте:</span> <span class="answer">{{ data.dislike }}</span></li>
+    <li><span>Ваша оценка сайта: </span> <span class="answer">{{ data.internet }}</span></li>
+    <li><span>Получать новости сайта на e-mail :</span><span class="answer">
+        {{ data.notice }}
+    </span></li>
+    <li><span>Baш e-mail :</span> <span class="answer">{{ data.email }}</span></li>
+    <li><span>Предложение по улучшению сайта :</span> <span class="answer">{{ data.message }}</span></li>
+</ul>
+{% endif %}
+{% endblock %}
